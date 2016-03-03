@@ -5,7 +5,7 @@
     "dist/css/boxfish-assets.min.css",
     "dist/sass/colors.scss",
     "dist/sass/mixins.scss",
-    "dist/sass/variables.scss",
+    "dist/sass/variables.scss"
   ],
   "authors": [
     "Mark Murray"
