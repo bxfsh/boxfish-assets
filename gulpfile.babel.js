@@ -12,7 +12,7 @@ const sassOptions = {
 
 const cssFileName = 'boxfish-assets.css';
 
-// Sass task
+// Sass to Css task
 gulp.task('sass', () => {
   return gulp.src('./sass/importer.scss')
     .pipe(sass(sassOptions).on('error', sass.logError))
@@ -27,8 +27,17 @@ gulp.task('sass:watch', () => {
 
 // Compiles sass docs
 gulp.task('sassdoc', () => {
-  return gulp.src('./sass/**/*.scss')
-    .pipe(sassdoc());
+  return gulp.src('sass/exports/*.scss')
+    .pipe(sassdoc({
+      theme: 'neat',
+      groups: {
+        devices: 'Devices',
+      },
+    }));
+});
+
+gulp.task('sassdoc:watch', () => {
+  return gulp.watch('sass/mixins/*.scss', ['sassdoc']);
 });
 
 // Autoprefixer task

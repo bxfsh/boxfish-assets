@@ -1,8 +1,7 @@
-// @author Mark Murray
-
-@import "colors";
-@import "sass-helpers";
-@import "variables";
+/// @author Mark Murray
+@import "exports/colors";
+@import "exports/mixins";
+@import "exports/variables";
 
 .user-initial {
 	width: 30px;

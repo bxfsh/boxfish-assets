@@ -2,7 +2,10 @@
   "name": "boxfish-assets",
   "description": "Boxfish shared assets",
   "main": [
-    "dist/css/boxfish-assets.min.css"
+    "dist/css/boxfish-assets.min.css",
+    "sass/exports/colors.scss",
+    "sass/exports/mixins.scss",
+    "sass/exports/variables.scss",
   ],
   "authors": [
     "Mark Murray"
@@ -12,7 +15,7 @@
     "boxfish"
   ],
   "moduleType": [],
-  "homepage": "",
+  "homepage": "https://github.com/bxfsh/boxfish-assets",
   "ignore": [
     "**/.*",
     "node_modules",
