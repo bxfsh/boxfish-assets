@@ -4,6 +4,7 @@ import sassdoc from 'sassdoc';
 import autoprefixer from 'gulp-autoprefixer';
 import rename from 'gulp-rename';
 import cssmin from 'gulp-cssmin';
+import gzip from 'gulp-gzip';
 
 const sassOptions = {
   outputStyle: 'expanded',
@@ -48,8 +49,14 @@ gulp.task('cssmin', () => {
     .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('gzip', () => {
+  return gulp.src(`dist/css/${cssFileName}`)
+    .pipe(gzip())
+    .pipe(gulp.dest('dist/css'));
+});
+
 // Default Task
 gulp.task('default', ['sass', 'autoprefixer', 'cssmin', 'sass:watch']);
 
 // Production Task
-gulp.task('build', ['sass', 'autoprefixer', 'cssmin']);
+gulp.task('build', ['sass', 'autoprefixer', 'cssmin', 'gzip']);
