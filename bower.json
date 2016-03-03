@@ -2,10 +2,10 @@
   "name": "boxfish-assets",
   "description": "Boxfish shared assets",
   "main": [
-    "dist/css/boxfish-assets.min.css",
-    "dist/sass/colors.scss",
-    "dist/sass/mixins.scss",
-    "dist/sass/variables.scss"
+    "./dist/css/boxfish-assets.min.css",
+    "./sass/exports/colors.scss",
+    "./sass/exports/mixins.scss",
+    "./sass/exports/variables.scss"
   ],
   "authors": [
     "Mark Murray"
