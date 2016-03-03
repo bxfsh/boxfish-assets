@@ -14,7 +14,7 @@
   "keywords": [
     "boxfish"
   ],
-  "author": "Mark Murray",
+  "author": "Mark Murray <mark@boxfish.com>",
   "license": "ISC",
   "homepage": "https://bitbucket.org/boxfish-ondemand/frontend-shared-assets#readme",
   "devDependencies": {
