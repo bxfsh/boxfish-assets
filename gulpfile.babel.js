@@ -20,6 +20,11 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('export-sass', () => {
+  return gulp.src('./sass/exports/**/*.scss')
+    .pipe(gulp.dest('dist/scss'));
+});
+
 // Watch Task
 gulp.task('sass:watch', () => {
   gulp.watch('./sass/**/*.scss', ['sass']);
@@ -27,7 +32,7 @@ gulp.task('sass:watch', () => {
 
 // Compiles sass docs
 gulp.task('sassdoc', () => {
-  return gulp.src('sass/exports/*.scss')
+  return gulp.src('./sass/exports/*.scss')
     .pipe(sassdoc({
       theme: 'neat',
       groups: {
@@ -37,7 +42,7 @@ gulp.task('sassdoc', () => {
 });
 
 gulp.task('sassdoc:watch', () => {
-  return gulp.watch('sass/mixins/*.scss', ['sassdoc']);
+  return gulp.watch('./sass/mixins/*.scss', ['sassdoc']);
 });
 
 // Autoprefixer task
@@ -68,4 +73,4 @@ gulp.task('gzip', () => {
 gulp.task('default', ['sass', 'autoprefixer', 'cssmin', 'sass:watch']);
 
 // Production Task
-gulp.task('build', ['sass', 'autoprefixer', 'cssmin', 'gzip']);
+gulp.task('build', ['sass', 'autoprefixer', 'cssmin', 'gzip', 'export-sass']);
