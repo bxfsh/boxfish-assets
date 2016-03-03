@@ -1,0 +1,23 @@
+{
+  "name": "boxfish-assets",
+  "description": "Boxfish shared assets",
+  "main": [
+    "dist/css/boxfish-assets.min.css"
+  ],
+  "authors": [
+    "Mark Murray"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "boxfish"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
