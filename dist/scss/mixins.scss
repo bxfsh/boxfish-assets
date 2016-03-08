@@ -18,24 +18,49 @@
   }
 }
 
-/// Usage "@include position-fixed()"
-@mixin position-fixed {
-  position: fixed;
-  @include backface-visibility(hidden);
-}
-
 /// Add position and positioning properties to an element
+///
 /// @param {string} $position [relative] - position
 /// @param {number} $top [0] - top
 /// @param {number} $right [0] - right
 /// @param {number} $bottom [0] - bottom
 /// @param {number} $left [0] - left
+///
+/// @example scss - SCSS
+///   .element {
+///     @include position(absolute);
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     position: absolute;
+///     top: 0;
+///     right: 0;
+///     bottom: 0;
+///     left: 0;
+///   }
 @mixin position($position: relative, $top: 0, $right: 0, $bottom: 0, $left: 0) {
   position: $position;
   top: $top;
   right: $right;
   bottom: $bottom;
   left: $left;
+}
+
+/// Fixed position
+/// @example scss - SCSS
+///   .element {
+///     @include position-fixed;
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     position: fixed;
+///     backface-visibility: hidden;
+///   }
+@mixin position-fixed {
+  position: fixed;
+  @include backface-visibility(hidden);
 }
 
 /// Import default styles for an input element
@@ -110,8 +135,6 @@
     }
   }
 }
-
-$border: 1px solid $border-grey;
 
 %flex {
   display: flex;

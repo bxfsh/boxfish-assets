@@ -1,0 +1,120 @@
+@import "../exports/colors";
+
+// NOTY
+.noty-close-button {
+	cursor: pointer;
+	opacity: 0.6;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+// SELECT2
+.select2-container {
+	z-index: 10000;
+}
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 40px;
+	outline: none;
+}
+
+.select2-container--default .select2-selection--single {
+	background-color: $button-grey;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: 40px;
+	color: $dark-grey!important;
+}
+
+.select2-container .select2-selection--single {
+	padding-left: 0.5em;
+}
+
+.select2-selection, .select2-dropdown {
+	border: 1px solid $border-grey!important;
+}
+
+.select2-results__option--highlighted {
+	background-color: $blue!important;
+}
+
+.select2-selection__choice {
+	background: $button-grey!important;
+	border: 1px solid $border-grey!important;
+}
+
+.select2-search__field {
+	width: 100%!important;
+}
+
+// Tablesorter
+// TABLESORTER
+.head {
+	cursor: pointer;
+	color: lighten($light-grey, 5%);
+	font-size: 1em;
+	font-weight: bold;
+	outline: none;
+
+	.tablesorter-header-inner {
+		text-indent: 10px;
+
+		&::before {
+			float: left;
+			color: darken($lighter-grey, 5%);
+			font-size: 0.9em;
+			font-family: 'boxfish';
+			content: '\e64e'; // .icon-select-arrows
+			margin-top: 1px;
+			position: absolute;
+			padding-left: 4px;
+			vertical-align: middle;
+			margin-left: -28px;
+		}
+	}
+
+	&.sorter-false {
+		cursor: default;
+		.tablesorter-header-inner::before { content: '' }
+
+		.tablesorter-header-inner {
+			text-indent: 6px;
+		}
+	}
+
+	&:hover {
+		color: $dark-grey;
+
+		&::before {
+			color: $dark-grey;
+		}
+	}
+
+	&.asc, &.desc {
+		color: $blue;
+		font-weight: bold;
+		position: relative;
+
+		.tablesorter-header-inner::before {
+			float: right;
+			color: $blue;
+			font-family: 'boxfish';
+		}
+	}
+
+	&.asc {
+		.tablesorter-header-inner::before {
+			content: '\e655'; // .icon-triangle-up
+		}
+	}
+
+	&.desc {
+		.tablesorter-header-inner::before {
+			content: '\e652'; // .icon-triangle-down
+		}
+	}
+}

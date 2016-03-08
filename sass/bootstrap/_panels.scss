@@ -1,0 +1,40 @@
+@import "../exports/colors";
+
+.panel {
+	box-shadow: none;
+	position: relative;
+	background-image: none;
+
+	&.white {
+		background: white;
+		padding: 2em;
+		margin: 2em 0 0 0;
+	}
+
+	&.panel-default {
+
+		.panel-heading {
+			background: $background-grey;
+			background-image: none;
+			font-size: 0.8em;
+			color: $light-grey;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+	}
+
+	&.panel-blank {
+
+		.panel-heading {
+			background: white;
+			border-bottom: 1px dashed $border-grey;
+			background-image: none;
+			font-size: 0.8em;
+			color: $light-grey;
+			padding: 1.5em 0;
+			margin: 0 1em;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+	}
+}

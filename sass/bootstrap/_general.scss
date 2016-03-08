@@ -1,0 +1,81 @@
+@import "../exports/colors";
+@import "../exports/mixins";
+
+html, body {
+	color: $dark-grey;
+}
+
+a {
+	color: $blue;
+	cursor: pointer;
+}
+
+label {
+	cursor: inherit;
+
+	&.small {
+		font-size: 0.8em;
+	}
+}
+
+.progress {
+	height: 8px;
+}
+
+ul, ol {
+	list-style-type: none;
+	padding: 0;
+}
+
+.well {
+	background-image: none;
+	box-shadow: none;
+	font-size: 0.9em;
+	margin-top: 0.25em;
+	padding: 1em;
+	background: aliceblue;
+
+	input, label {
+		margin: 0;
+	}
+
+	small {
+		display: block;
+	}
+}
+
+hr {
+	&.neat {
+		border-color: $border-grey;
+		margin: 10px 0;
+	}
+}
+
+// FOOTER
+footer {
+	padding: 1.5em;
+	font-size: 0.8em;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+
+	border-top: 1px solid $border-grey;
+
+	span, li {
+		vertical-align: sub;
+	}
+
+	#copyright {
+		text-align: left;
+	}
+
+	ul {
+		display: inline-block;
+		text-align: right;
+
+		li {
+			display: inline-block;
+			margin: 0 0.5em;
+		}
+	}
+}

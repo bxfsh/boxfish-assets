@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
-import sassdoc from 'sassdoc';
 import autoprefixer from 'gulp-autoprefixer';
 import rename from 'gulp-rename';
 import cssmin from 'gulp-cssmin';
@@ -28,21 +27,6 @@ gulp.task('export-sass', () => {
 // Watch Task
 gulp.task('sass:watch', () => {
   gulp.watch('./sass/**/*.scss', ['sass']);
-});
-
-// Compiles sass docs
-gulp.task('sassdoc', () => {
-  return gulp.src('./sass/exports/*.scss')
-    .pipe(sassdoc({
-      theme: 'neat',
-      groups: {
-        devices: 'Devices',
-      },
-    }));
-});
-
-gulp.task('sassdoc:watch', () => {
-  return gulp.watch('./sass/mixins/*.scss', ['sassdoc']);
 });
 
 // Autoprefixer task

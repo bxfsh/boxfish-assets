@@ -1,0 +1,16 @@
+.list-group {
+	box-shadow: none;
+}
+
+.list-group-item {
+	border-color: $border-grey;
+
+	&.disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+
+		button {
+			cursor: not-allowed;
+		}
+	}
+}

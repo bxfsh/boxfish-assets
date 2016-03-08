@@ -1,0 +1,117 @@
+@import "../exports/colors";
+
+.dropdown-menu {
+	box-shadow: 0 5px 20px 0 rgba($nav-color, 0.3);
+	background: white;
+	border: none;
+	padding: 0;
+	min-width: 200px;
+	border-radius: 4px;
+	transition: box-shadow 0.4s ease;
+
+	.dropdown-header {
+    padding: 0.75em 1em 0;
+    color: $blue;
+	}
+
+	.divider {
+		margin: 0.5em 0;
+	}
+
+	&.dropdown-menu-right {
+		&::before {
+			left: inherit;
+			right: 9px;
+		}
+		&::after {
+			right: 10px;
+			left: inherit;
+		}
+	}
+
+	&::after {
+	  position: absolute;
+	  top: -6px;
+	  left: 10px;
+	  display: inline-block;
+	  border-right: 6px solid transparent;
+	  border-bottom: 6px solid white;
+	  border-left: 6px solid transparent;
+	  content: '';
+	}
+
+	> li {
+
+		&:last-child a {
+			border-bottom: 0;
+		}
+
+		&.danger {
+			a:hover {
+				color: white;
+				background: $red;
+			}
+		}
+
+		> a {
+			padding: 0.75em 1.5em;
+			color: $dark-grey;
+			font-size: 0.975em;
+			cursor: pointer;
+			outline: none;
+
+			> i {
+				color: $light-grey;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-image: none;
+				background-color: rgba($background-grey, 0.5);
+				font-weight: 600;
+				color: $blue;
+
+				i {
+					color: inherit;
+				}
+			}
+		}
+	}
+}
+
+// Set dropdowns to show on hover (not click)
+// Opt-out with ".dropdown-click"
+.dropdown:not(.dropdown-click),
+.dropdown:not(.dropdown-click) > a {
+
+	&:hover {
+		.dropdown-menu {
+			display: block!important;
+		}
+	}
+}
+
+.open > .dropdown-toggle.btn-primary {
+  background: darken($blue, 10%);
+	border: none;
+}
+
+.dropdown-toggle.small-dropdown {
+	background: transparent!important;
+	padding: 6px 12px;
+}
+
+.dropdown-btn {
+
+	button {
+		background: $button-grey;
+		border-color: $button-border-grey;
+		text-align: left;
+
+		&:hover {
+			border-color: darken($button-border-grey, 10%);
+			color: $dark-grey;
+		}
+	}
+}

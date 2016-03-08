@@ -1,0 +1,120 @@
+@import "../exports/colors";
+
+.input-group-addon:first-child {
+	background: $background-grey;
+	border-color: $border-grey;
+}
+
+input[type="date"] {
+	line-height: 39px;
+	width: 100%;
+	color: $light-grey;
+	padding: 0 0.75em;
+}
+
+input[type="time"] {
+	padding: 0.5em;
+	color: $dark-grey;
+	outline: none;
+	border: 1px solid $border-grey;
+
+	&.rounded {
+		border-radius: 4px;
+	}
+
+	&.with-addon {
+		border-radius: 0 4px 4px 0;
+	}
+}
+
+input[type="radio"] {
+	margin-right: 1em;
+}
+
+.input-group .form-control {
+	line-height: inherit!important;
+}
+
+.input-filter {
+	color: white;
+}
+
+.form-control {
+	border-color: $button-border-grey;
+	height: inherit;
+	padding: 0.75em;
+	box-shadow: none;
+	color: $dark-grey;
+	font-weight: normal;
+	font-family: inherit;
+
+	&::placeholder {
+		opacity: 0.5;
+	}
+
+	&.form-select {
+		background: $modal-grey;
+		padding: 0.75em 0.5em;
+	}
+
+	&:focus {
+		border-color: lighten($blue, 10%);
+		border-width: 2px;
+		box-shadow: none;
+	}
+}
+
+textarea {
+	width: 100%;
+	border: 1px solid $button-border-grey;
+	padding: 0.75em;
+	color: $dark-grey;
+	border-radius: 4px;
+	outline: none;
+	max-width: 100%;
+}
+
+.full-width-select {
+	width: 100%;
+	background: white;
+	color: $dark-grey;
+	padding: 1em;
+	display: block;
+	height: 40px;
+	text-indent: 0.5em;
+	border-color: $border-grey;
+	cursor: pointer;
+	outline: none;
+	margin-bottom: 1em;
+
+	&:hover {
+		border-color: darken($border-grey, 5%);
+	}
+}
+
+.select-addon::after {
+	position: absolute;
+	right: 1em;
+	content: '\e64e';
+	font-family: 'boxfish';
+	font-size: 0.8em;
+	margin: 0.8em;
+	cursor: pointer;
+}
+
+.custom-select {
+	appearance: none;
+	font-size: 1em;
+	font-weight: 500;
+	color: white;
+	background: rgba(black, 0.05);
+	padding: 0.5em 2em 0.5em 1em;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	cursor: pointer;
+
+	&:hover {
+		background: rgba(black, 0.1);
+	}
+}

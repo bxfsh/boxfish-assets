@@ -228,6 +228,8 @@
 
 	// The user account
 	&--user {
+		margin-left: auto;
+
 		.user-username {
 			display: flex;
 			color: white;
@@ -436,23 +438,15 @@
 	position: relative;
 
 	> a {
-		padding: 1.075em;
 		display: block;
 		text-decoration: none;
-		max-width: 250px;
-		overflow: hidden;
-		max-height: 47px;
 		color: white;
 		font-weight: 600;
-
-		&:hover {
-			background: rgba(white, 0.05);
-		}
 	}
 }
 
 .title-header {
-	background: #2D333C;
+	background: $title-header;
 	position: relative;
 	padding: 1em;
 	display: block;

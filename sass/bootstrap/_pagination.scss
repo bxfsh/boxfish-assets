@@ -1,0 +1,30 @@
+@import "../exports/colors";
+
+// PAGINATION
+ul.pagination {
+	margin: 3em auto 1em;
+	display: block;
+	text-align: center;
+
+	li {
+		margin: 0 0.25em;
+
+		&.active {
+			a, a:hover {
+				background: $purple;
+			}
+		}
+
+		a {
+			border: none;
+			background: transparent;
+			border-radius: 4px;
+			color: $dark-grey;
+			float: none;
+
+			&:hover {
+				background: darken($background-grey, 5%);
+			}
+		}
+	}
+}
