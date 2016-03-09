@@ -1,3 +1,4 @@
+@import "../exports/variables";
 @import "../exports/colors";
 @import "../exports/mixins";
 
@@ -5,9 +6,71 @@ html, body {
 	color: $dark-grey;
 }
 
-a {
-	color: $blue;
+a,
+a:visited,
+a:focus {
+	
+	text-decoration: inherit;
+	font-style: inherit;
 	cursor: pointer;
+}
+
+input[type="checkbox"]:not(.onoffswitch-checkbox), input[type="radio"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  outline: 0;
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+	top: -11px;
+
+	&:hover::after {
+		border-color: #aaa;
+	}
+
+	&::before {
+		position: absolute;
+		content: ' ';
+		font-family: 'boxfish';
+		color: white;
+		font-size: 11px;
+		z-index: 2;
+		text-align: center;
+		line-height: $checkbox-size;
+		left: 2px;
+		transform: scale(0);
+		transition: transform 0.2s;
+	}
+
+  &:checked {
+    &::before {
+      content: '\e67f';
+			transform: scale(1);
+    }
+
+    &::after {
+      background: #6495ED;
+			border: none;
+    }
+  }
+
+  &::after {
+    content: " ";
+    width: $checkbox-size;
+    height: $checkbox-size;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+		transition: background 0.1s;
+  }
+}
+
+input[type="radio"] {
+	&::after {
+		border-radius: 50%;
+	}
 }
 
 label {
