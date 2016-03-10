@@ -1,0 +1,11 @@
+@import "../exports/colors.scss";
+
+.nav.nav-pills {
+  > li.active > a {
+    background: $blue;
+  }
+
+  > li > a {
+    padding: 9px;
+  }
+}

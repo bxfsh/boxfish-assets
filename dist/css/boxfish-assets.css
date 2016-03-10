@@ -2859,6 +2859,14 @@ ul.pagination li a:hover {
   content: '\e652';
 }
 
+.nav.nav-pills > li.active > a {
+  background: #6696dc;
+}
+
+.nav.nav-pills > li > a {
+  padding: 9px;
+}
+
 .text-overflow {
   text-overflow: ellipsis;
   overflow: hidden;
