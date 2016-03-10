@@ -9,7 +9,7 @@ html, body {
 a,
 a:visited,
 a:focus {
-	
+
 	text-decoration: inherit;
 	font-style: inherit;
 	cursor: pointer;
@@ -93,10 +93,13 @@ ul, ol {
 .well {
 	background-image: none;
 	box-shadow: none;
-	font-size: 0.9em;
-	margin-top: 0.25em;
-	padding: 1em;
-	background: aliceblue;
+	border: none;
+	font-size: 12px;
+	margin: 0.25em 0;
+	padding: 10px 12px;
+	line-height: 1.5;
+	min-height: inherit;
+	background: hsla(240,20%,97%,1);
 
 	input, label {
 		margin: 0;
