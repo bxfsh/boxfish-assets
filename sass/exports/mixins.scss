@@ -8,7 +8,7 @@
 }
 
 // Creates a new loader
-@mixin createLoader($name, $size, $color: $purple) {
+@mixin createLoader($name, $size: 1.5em, $color: $purple) {
   #{$name} {
     margin: 40px auto;
     font-size: 10px;
