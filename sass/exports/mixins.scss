@@ -2,6 +2,36 @@
 @import "colors";
 @import "variables";
 
+@keyframes loader-spin {
+  0%   { transform: rotate(0deg)  }
+  100% { transform: rotate(360deg) }
+}
+
+// Creates a new loader
+@mixin createLoader($name, $size, $color: $purple) {
+  #{$name} {
+    margin: 40px auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border: 0.35em solid;
+    border-top-color: $lighter-grey;
+    border-right-color: $lighter-grey;
+    border-bottom-color: $lighter-grey;
+    border-left-color: $color;
+
+    transform: translateZ(0);
+    animation: loader-spin 0.6s infinite linear;
+  }
+
+  #{$name},
+  #{$name}::after {
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+  }
+}
+
 /// Adds a light box shadow to an element
 @mixin light-shadow {
   @include box-shadow(0 1px 8px 0 rgba($light-grey, 0.2));

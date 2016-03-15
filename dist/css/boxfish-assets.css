@@ -1,3 +1,25 @@
+@-webkit-keyframes loader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .text-overflow {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -90,18 +112,6 @@
   border-top-color: #3e4753;
   border-right-color: #3e4753;
   border-bottom-color: #3e4753;
-}
-
-keyframes loader-spin 0% {
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-keyframes loader-spin 100% {
-  -webkit-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
 }
 
 .custom-container {
@@ -846,6 +856,17 @@ keyframes loader-spin 100% {
   transition: none;
 }
 
+@keyframes loader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .text-overflow {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1519,10 +1540,32 @@ keyframes loader-spin 100% {
   color: white;
 }
 
+@keyframes loader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .text-overflow {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@keyframes loader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .text-overflow {
@@ -2345,6 +2388,17 @@ textarea {
   background: #f4f4f4;
 }
 
+@keyframes loader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .text-overflow {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -2868,6 +2922,17 @@ ul.pagination li a:hover {
 
 .nav.nav-pills > li > a {
   padding: 9px;
+}
+
+@keyframes loader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .text-overflow {
