@@ -224,3 +224,11 @@
   @if $md == true { @include md-device { @content; }}
   @if $lg == true { @include lg-device { @content; }}
 }
+
+/// changes the placeholder text colour
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
