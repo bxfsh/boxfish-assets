@@ -2,6 +2,17 @@
 @import "colors";
 @import "variables";
 
+// Mix a color with black
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+// Mix a color with white
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+
+// Loader animation
 @keyframes loader-spin {
   0%   { transform: rotate(0deg)  }
   100% { transform: rotate(360deg) }
@@ -29,6 +40,14 @@
     border-radius: 50%;
     width: $size;
     height: $size;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
   }
 }
 
@@ -90,7 +109,7 @@
 ///   }
 @mixin position-fixed {
   position: fixed;
-  @include backface-visibility(hidden);
+  backface-visibility: hidden;
 }
 
 /// Import default styles for an input element

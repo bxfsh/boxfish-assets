@@ -10,12 +10,36 @@
 @include createLoader('.small-loader', 1.5em);
 @include createLoader('.saving-loader', 1.5em, white);
 
+.animated-ellipsis {
+  &::after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: animated-ellipsis steps(4,end) 900ms infinite;
+    content: "\2026";
+    width: 0px;
+  }
+}
+
+@keyframes animated-ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+.saving-loader {
+  margin: inherit;
+  display: inline-flex;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: white;
+  border-top-color: white;
+}
+
 .small-loader {
   border-width: 0.2em;
   display: inline-block;
-  margin: 0;
-  margin-right: 1em;
-  margin-bottom: -3px;
+  margin: 0 auto;
 
   &.dark {
     border-top-color: lighten($dark-header, 8%);
@@ -32,6 +56,7 @@
 .container-sm {
   max-width: 900px;
   margin: auto;
+  padding: 0 1em;
 }
 
 .flex {
@@ -50,8 +75,10 @@
   flex-direction: row;
 }
 
-.flex-span-1 {
-  flex: 1
+@for $i from 1 through 10 {
+  .flex-span-#{$i}, {
+    flex: $i;
+  }
 }
 
 
@@ -124,6 +151,8 @@ $directions: 'top', 'bottom', 'right', 'left';
 .no-background 			{ background: none!important }
 .no-border          { border: none!important }
 .extra-space 				{ padding-bottom: 8em!important }
+.lowercase          { text-transform: lowercase }
+.uppercase          { text-transform: uppercase }
 .capitalize 				{ text-transform: capitalize }
 .inline-block 			{ display: inline-block }
 .cursor 						{ cursor: pointer!important }
@@ -146,7 +175,6 @@ $directions: 'top', 'bottom', 'right', 'left';
 
 
 .list {
-
   .list-item {
     padding: 0.75em 1em;
 
@@ -179,159 +207,4 @@ $directions: 'top', 'bottom', 'right', 'left';
   &.label-expansion-REJECTED {
     background: $red;
   }
-}
-
-// Create Buttons
-@include create-button(error, $red);
-@include create-button(success, darken($green, 3%));
-@include create-button(primary-alt, $purple);
-@include create-button(default-dark, #4D5460, darken(white, 5%));
-@include create-ghost-button(error, $red);
-@include create-ghost-button(success, $green);
-@include create-ghost-button(primary, $blue);
-@include create-ghost-button(primary-alt, $purple);
-@include create-ghost-button(warning, $warning);
-
-.btn-sm { font-size: 0.8em }
-.btn { font-size: 0.9em; }
-
-.btn,
-.btn-sm {
-  border: none;
-	text-decoration: none!important;
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
-	outline: none none;
-	box-shadow: none;
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-	text-shadow: none;
-  font-weight: 400;
-	overflow: hidden;
-  background-image: none;
-  transition: all 0.1s;
-	box-shadow: none!important;
-  border-radius: 3px;
-
-  &:focus { outline: none }
-
-  &.disabled, &:disabled {
-    opacity: 0.6;
-    pointer-events: none;
-  }
-
-	> i {
-		margin-right: 1em;
-		color: white;
-	}
-
-  &.btn-centered {
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &.btn-no-bg {
-    background: transparent;
-    color: $light-grey;
-    font-weight: 600;
-    padding-left: 0.5em;
-
-    &:hover {
-      background: rgba(black, 0.05);
-      color: $dark-grey;
-    }
-
-    i {
-      color: $dark-grey;
-    }
-  }
-
-  &.btn-simple {
-    background: lighten($lightest-grey, 2%);
-    color: $dark-grey;
-    border: 1px solid $lighter-grey;
-    font-size: 13px;
-
-    i { color: $dark-grey }
-
-    &:hover {
-      background: darken($lightest-grey, 2%);
-      border-color: darken($lighter-grey, 5%);
-    }
-  }
-
-	&.btn-no-text {
-		padding-right: 0;
-		margin-right: 0.25em;
-
-		i {
-			margin-right: 0;
-		}
-	}
-
-	&.btn-rounded {
-    border-radius: 20px;
-		padding-left: 1.5em;
-
-		i { margin: 0; padding: 0; background: transparent!important; }
-	}
-
-  &.btn-ghost {
-
-    background: transparent;
-    color: $lighter-grey;
-    border: 1px solid;
-    font-weight: 600;
-    border-radius: 4px;
-
-    &:hover {
-      color: $blue;
-    }
-
-    i {
-      background: transparent;
-      padding-right: 0;
-      color: inherit;
-    }
-  }
-
-	&.btn-blank {
-		background: white;
-		border: 1px solid $border-grey;
-		color: $light-grey;
-
-		&:hover {
-			background: darken(white, 1%);
-			border: 1px solid darken($border-grey, 2%);
-			color: $dark-grey;
-		}
-
-		i {
-			color: $dark-grey;
-		}
-	}
-
-	&.btn-primary { background: $blue }
-
-	&.btn-default {
-		background: white;
-		color: $dark-grey;
-		border: 1px solid $border-grey;
-		box-shadow: inset 0px 1px 0px rgba(white, 0.7);
-
-		&:hover {
-			background: darken($button-grey, 2%);
-			border-color: darken($button-border-grey, 5%);
-			color: $dark-grey;
-		}
-
-		&.active {
-			background: $blue;
-			color: white;
-			border-color: darken($blue, 5%);
-			box-shadow: none;
-      transition: none;
-		}
-	}
 }

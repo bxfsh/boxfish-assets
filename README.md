@@ -52,12 +52,15 @@ To import the sass files, add the following to your main sass stylesheet:
 
 This project uses Gulp for task automation. You will find a file called `gulpfile.babel.js` in the root of the project.
 
-Run the default Gulp tasks (development):
-```shell
-gulp
-```
+To execute gulp each time a sass file changes, use `gulp watch`
 
-When you are finished making changes, run the Gulp build task:
+To execute gulp once, just use `gulp`
+
+## Documentation
+
+The docs are located in `/docs` and can be compiled by the following commands:
+
 ```shell
-gulp build
+cd docs
+jekyll serve
 ```

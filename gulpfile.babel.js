@@ -19,14 +19,14 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('export-sass', () => {
+gulp.task('export-sass', ['sass'], () => {
   return gulp.src('./sass/exports/**/*.scss')
     .pipe(gulp.dest('dist/scss'));
 });
 
 // Watch Task
 gulp.task('sass:watch', () => {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./sass/**/*.scss', ['default']);
 });
 
 // Autoprefixer task
@@ -40,21 +40,20 @@ gulp.task('autoprefixer', ['sass'], () => {
 });
 
 // Minify css task
-gulp.task('cssmin', () => {
+gulp.task('cssmin', ['autoprefixer'], () => {
   return gulp.src(`dist/css/${cssFileName}`)
     .pipe(cssmin())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('gzip', () => {
-  return gulp.src(`dist/css/${cssFileName}`)
-    .pipe(gzip())
-    .pipe(gulp.dest('dist/css'));
+gulp.task('exportDistToDocs', ['sass', 'export-sass', 'autoprefixer', 'cssmin'], () => {
+  return gulp.src('dist/**/*')
+    .pipe(gulp.dest('docs/dist'));
 });
 
 // Default Task
-gulp.task('default', ['sass', 'autoprefixer', 'cssmin', 'sass:watch']);
+gulp.task('default', ['sass', 'export-sass', 'autoprefixer', 'cssmin', 'exportDistToDocs']);
 
-// Production Task
-gulp.task('build', ['sass', 'autoprefixer', 'cssmin', 'gzip', 'export-sass']);
+// Watch Task
+gulp.task('watch', ['sass:watch']);

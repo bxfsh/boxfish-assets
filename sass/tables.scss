@@ -1,0 +1,57 @@
+@import "exports/colors";
+@import "exports/mixins";
+@import "exports/variables";
+
+$table-border: #eeeeee;
+$table-header: #F8F8F8;
+
+@for $i from 1 through 10 {
+  .flex-table .flex-table-header .flex-table-cell.cell-flex-#{$i},
+  .flex-table .flex-table-body .flex-table-cell.cell-flex-#{$i}, {
+    flex-grow: $i;
+  }
+}
+
+.flex-table {
+  display: flex;
+  flex-direction: column;
+
+  .flex-table-header {
+    border-top: 1px solid $table-border;
+    background: $table-header;
+
+    .flex-table-cell {
+      padding: 8px 25px;
+      font-size: 12px;
+
+      &.wide {
+        flex: none;
+      }
+    }
+  }
+
+  .flex-table-row {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-left: 1px solid $table-border;
+    border-bottom: 1px solid $table-border;
+
+    .flex-table-cell {
+      display: table-cell;
+      flex: 1;
+      border-right: 1px solid $table-border;
+      padding: 1em;
+      word-break: break-word;
+      box-sizing: border-box;
+
+      &.wide {
+        flex: none;
+        width: 370px;
+        text-align: left;
+      }
+    }
+  }
+}
