@@ -1,0 +1,245 @@
+/// @author Mark Murray
+@import "colors";
+@import "variables";
+
+// Mix a color with black
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+// Mix a color with white
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+
+// Loader animation
+@keyframes loader-spin {
+  0%   { transform: rotate(0deg)  }
+  100% { transform: rotate(360deg) }
+}
+
+// Creates a new loader
+@mixin createLoader($name, $size: 1.5em, $color: $purple) {
+  #{$name} {
+    margin: 40px auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border: 0.35em solid;
+    border-top-color: $lighter-grey;
+    border-right-color: $lighter-grey;
+    border-bottom-color: $lighter-grey;
+    border-left-color: $color;
+
+    transform: translateZ(0);
+    animation: loader-spin 0.6s infinite linear;
+  }
+
+  #{$name},
+  #{$name}::after {
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+/// Adds a light box shadow to an element
+@mixin light-shadow {
+  @include box-shadow(0 1px 8px 0 rgba($light-grey, 0.2));
+}
+
+/// Create a gradient from one single color
+@mixin gradient($color) {
+  background: linear-gradient(left, darken($color, 2%), darken($color, 8%));
+  transition: background 0.25s ease;
+  color: white;
+
+  &:hover {
+    background: linear-gradient(left, darken($color, 8%), darken($color, 8%));
+  }
+}
+
+/// Add position and positioning properties to an element
+///
+/// @param {string} $position [relative] - position
+/// @param {number} $top [0] - top
+/// @param {number} $right [0] - right
+/// @param {number} $bottom [0] - bottom
+/// @param {number} $left [0] - left
+///
+/// @example scss - SCSS
+///   .element {
+///     @include position(absolute);
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     position: absolute;
+///     top: 0;
+///     right: 0;
+///     bottom: 0;
+///     left: 0;
+///   }
+@mixin position($position: relative, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+/// Fixed position
+/// @example scss - SCSS
+///   .element {
+///     @include position-fixed;
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     position: fixed;
+///     backface-visibility: hidden;
+///   }
+@mixin position-fixed {
+  position: fixed;
+  backface-visibility: hidden;
+}
+
+/// Import default styles for an input element
+@mixin input {
+  background: white;
+  border: 1px solid $border-grey;
+  border-radius: 3px;
+  font-size: 1em;
+  color: $dark-grey;
+  padding: 0.5em;
+  width: 100%;
+  outline: none;
+}
+
+/// Create a new button style
+/// @param $name {string} - The button class name
+/// @param $bgcolor {color} - The button background color
+/// @param $textcolor {color} [white] - the button text color
+/// @param $border {border} [none] - the buttons border
+@mixin create-button($name, $bgcolor, $textcolor: white, $border: none) {
+  .btn, .btn-sm {
+    &.btn-#{$name} {
+      background: $bgcolor;
+      color: $textcolor;
+      border: $border;
+
+      &:hover {
+        background: lighten($bgcolor, 5%);
+      }
+    }
+  }
+}
+
+/// Create a new "ghost-style" button
+/// @param $name {string} - The button class name
+/// @param $background {color} - The background color
+/// @param $textcolor {color} [darken($light-grey, 2%)] - The button text color
+/// @param $border-color {color} [darken($lighter-grey, 5%)] - The button border color
+@mixin create-ghost-button($name, $background, $textcolor: darken($light-grey, 2%), $border-color: darken($lighter-grey, 5%)) {
+
+  .btn, .btn-sm {
+    &.btn-ghost-#{$name} {
+      background: transparent;
+      border-radius: 4px;
+      font-weight: 600;
+      color: $textcolor;
+      border: 1px solid $border-color;
+
+      & > i {
+        padding: 0;
+        line-height: inherit!important;
+        background: transparent!important;
+        font-size: inherit!important;
+        width: inherit!important;
+        height: inherit!important;
+
+        &:hover {
+          background: transparent;
+          color: white!important;
+        }
+      }
+
+      &:hover {
+        background: $background;
+        border-color: $background;
+        color: white;
+
+        i {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+%flex {
+  display: flex;
+}
+
+%flex-grow {
+  flex-grow: 1;
+}
+
+%flex-wrap {
+  flex-wrap: wrap;
+}
+
+%flex-direction-column {
+  flex-direction: column;
+}
+
+%flex-direction-row {
+  flex-direction: row;
+}
+
+%flex-span-1 {
+  flex: 1;
+}
+
+
+%text-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/// Target extra-small devices
+@mixin xs-device {
+  @media (max-width: $xs-device) { @content; }
+}
+
+/// Target small devices
+@mixin sm-device {
+  @media (min-width: $sm-device) and (max-width: $md-device) { @content; }
+}
+
+/// Target medium size devices
+@mixin md-device {
+  @media (min-width: $md-device) and (max-width: $lg-device) { @content; }
+}
+
+/// Target large devices
+@mixin lg-device {
+  @media (min-width: $lg-device) { @content; }
+}
+
+/// Target multiple devices at once
+@mixin devices($xs: false, $sm: false, $md: false, $lg: false) {
+  @if $xs == true { @include xs-device { @content; }}
+  @if $sm == true { @include sm-device { @content; }}
+  @if $md == true { @include md-device { @content; }}
+  @if $lg == true { @include lg-device { @content; }}
+}
