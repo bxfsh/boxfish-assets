@@ -5,7 +5,8 @@
   "description": "Boxfish shared assets",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-docs": "git add .;git commit -am 'updating docs';git subtree push --prefix docs/_site origin gh-pages"
   },
   "repository": {
     "type": "git",

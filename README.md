@@ -58,9 +58,15 @@ To execute gulp once, just use `gulp`
 
 ## Documentation
 
-The docs are located in `/docs` and can be compiled by the following commands:
+The docs can be view here: (Boxfish Assets)[https://bxfsh.github.io/boxfish-assets]
+
+The files for the docs are located in `/docs`. To compile them, run:
 
 ```shell
 cd docs
 jekyll serve
 ```
+
+This will run jekyll's watch command which will regenerated the site each time the docs change.
+
+When you are finished editing the docs, use `jekyll build` to build the site and then push the docs to gh-pages using `npm run update-docs` from the parent directory.
