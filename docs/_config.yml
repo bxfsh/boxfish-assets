@@ -9,8 +9,8 @@
 title: Boxfish Assets
 email: mark@boxfish.com
 description: ""
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://boxfish.com" # the base hostname & protocol for your site
+baseurl: "/boxfish-assets" # the subpath of your site, e.g. /blog
+url: "https://bxfsh.github.io"
 twitter_username: bxfsh
 github_username:  bxfsh
 
