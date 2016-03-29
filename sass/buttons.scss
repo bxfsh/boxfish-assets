@@ -54,6 +54,11 @@
 		color: white;
 	}
 
+  &.btn-block {
+    width: 100%;
+    display: block;
+  }
+
   &.btn-centered {
     display: table;
     margin-left: auto;
@@ -70,6 +75,14 @@
       background: transparent!important;
     }
 	}
+}
+
+.btn.btn-dark {
+  background: hsla(222,21%,28%,1);
+
+  &:hover {
+    background: hsla(222,21%,32%,1);
+  }
 }
 
 .btn.btn-ghost,

@@ -3344,6 +3344,12 @@ ul.pagination li a:hover {
   color: white;
 }
 
+.btn.btn-block,
+.btn-sm.btn-block {
+  width: 100%;
+  display: block;
+}
+
 .btn.btn-centered,
 .btn-sm.btn-centered {
   display: table;
@@ -3362,6 +3368,14 @@ ul.pagination li a:hover {
   margin: 0;
   padding: 0;
   background: transparent !important;
+}
+
+.btn.btn-dark {
+  background: #384156;
+}
+
+.btn.btn-dark:hover {
+  background: #404b63;
 }
 
 .btn.btn-ghost,
