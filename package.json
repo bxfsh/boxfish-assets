@@ -6,7 +6,9 @@
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update-docs": "git add .;git commit -am 'updating docs';git subtree push --prefix docs/_site origin gh-pages"
+    "docs:serve": "cd docs && jekyll serve",
+    "docs:build": "cd docs && jekyll build",
+    "docs:deploy": "git add .;git commit -am 'updating docs';git subtree push --prefix docs/_site origin gh-pages"
   },
   "repository": {
     "type": "git",

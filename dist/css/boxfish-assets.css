@@ -3372,10 +3372,12 @@ ul.pagination li a:hover {
 
 .btn.btn-dark {
   background: #384156;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .btn.btn-dark:hover {
   background: #404b63;
+  color: white;
 }
 
 .btn.btn-ghost,

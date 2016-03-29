@@ -79,9 +79,11 @@
 
 .btn.btn-dark {
   background: hsla(222,21%,28%,1);
+  color: rgba(white, 0.8);
 
   &:hover {
     background: hsla(222,21%,32%,1);
+    color: rgba(white, 1);
   }
 }
 
