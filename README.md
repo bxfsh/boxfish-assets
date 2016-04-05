@@ -49,7 +49,13 @@ module.exports = function(grunt) {
 };
 ```
 
-Only use the `ignorePath` option if your bower_components folder is located in the assets folder.
+To ensure bower knows where you `bower_components` are being stored, add a `.bowerrc` file to the root of your project and add the following:
+
+```json
+{
+  "directory" : "./assets/bower_components"
+}
+```
 
 To import the javascript and css files, add the following to your `layout.ejs` file:
 ```html
@@ -65,6 +71,10 @@ To import the sass files, add the following to your main sass stylesheet:
 // bower:scss
 // endbower
 ```
+
+## Running
+
+To manually insert the bower dependencies to your view templates run: `grunt wiredep`.
 
 ## Contributing
 
