@@ -1469,6 +1469,25 @@ footer ul li {
   color: white;
 }
 
+input[type="text"].error,
+input[type="search"].error,
+input[type="number"].error {
+  border-color: #e15258 !important;
+  border-radius: 4px 4px 0 0;
+}
+
+input[type="text"] + span.error-message,
+input[type="search"] + span.error-message,
+input[type="number"] + span.error-message {
+  background: #e15258;
+  color: white;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+  display: block;
+}
+
 .input-group-addon:first-child {
   background: #F0F2F5;
   border-color: #e2e2e2;
