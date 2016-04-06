@@ -4,7 +4,22 @@ The purpose of this package is to re-use css files across projects.
 
 ## Installation
 
-Install using Bower:
+First of all make sure you have Bower installed globally:
+
+```shell
+npm install -g bower
+```
+
+Then initialise Bower on your project:
+
+```shell
+bower init
+```
+
+This will begin a walkthrough to generate a `bower.json` file which is similar to NPM's `pacakage.json`. Likewise this file will store the bower dependencies and their versions.
+
+
+Install this component using Bower:
 
 ```shell
 bower install boxfish-assets --save
@@ -15,8 +30,11 @@ Install `grunt-wiredep` in your main project:
 npm install grunt-wiredep --save-dev
 ```
 
+`grunt-wiredep` will handle the insertion of packages installed via bower into your view templates.
+
 Configure the `wiredep` task:
 ```javascript
+// config/wiredep.js
 module.exports = function(grunt) {
 
   grunt.config.set('wiredep', {
@@ -31,7 +49,13 @@ module.exports = function(grunt) {
 };
 ```
 
-Only use the `ignorePath` option if your bower_components folder is located in the assets folder.
+To ensure bower knows where you `bower_components` are being stored, add a `.bowerrc` file to the root of your project and add the following:
+
+```json
+{
+  "directory" : "./assets/bower_components"
+}
+```
 
 To import the javascript and css files, add the following to your `layout.ejs` file:
 ```html
@@ -47,6 +71,10 @@ To import the sass files, add the following to your main sass stylesheet:
 // bower:scss
 // endbower
 ```
+
+## Running
+
+To manually insert the bower dependencies to your view templates run: `grunt wiredep`.
 
 ## Contributing
 
