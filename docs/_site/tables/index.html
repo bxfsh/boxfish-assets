@@ -134,6 +134,68 @@
 </code></pre>
 </div>
 
+<hr />
+
+<h3 id="responsive-table">Responsive Table</h3>
+<p>Tables with the <code class="highlighter-rouge">table-responsive</code> class will break on small and extra-small devices.</p>
+
+<table class="table table-responsive table-light">
+  <thead>
+    <tr>
+      <th>One</th>
+      <th>Two</th>
+      <th>Three</th>
+      <th>Four</th>
+      <th>Five</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td data-label="One">One</td>
+      <td data-label="Two">Two</td>
+      <td data-label="Three">Three</td>
+      <td data-label="Four">Four</td>
+      <td data-label="Five">Five</td>
+    </tr>
+    <tr>
+      <td data-label="One">One</td>
+      <td data-label="Two">Two</td>
+      <td data-label="Three">Three</td>
+      <td data-label="Four">Four</td>
+      <td data-label="Five">Five</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>NOTE the <code class="highlighter-rouge">data-label</code> attribute is required on the &lt;td&gt; elements.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-responsive"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;</span>One<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Two<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Three<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Four<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Five<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"One"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"Two"</span><span class="nt">&gt;</span>Two<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"Three"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"Four"</span><span class="nt">&gt;</span>Four<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"Five"</span><span class="nt">&gt;</span>Five<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+</div>
+
   </div>
 
 </article>

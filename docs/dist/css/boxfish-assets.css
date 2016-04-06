@@ -2354,6 +2354,148 @@ textarea {
   table-layout: fixed;
 }
 
+@media (max-width: 767px) {
+  table.table.table-responsive {
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  table.table.table-responsive thead, table.table.table-responsive tbody, table.table.table-responsive th, table.table.table-responsive td, table.table.table-responsive tr {
+    display: block;
+  }
+  table.table.table-responsive thead {
+    display: none;
+  }
+  table.table.table-responsive tr {
+    border-bottom: 1px solid #ccc;
+    background: white;
+    margin-bottom: 0;
+  }
+  table.table.table-responsive td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 27% !important;
+  }
+  table.table.table-responsive td:last-of-type {
+    border-bottom: none;
+  }
+  table.table.table-responsive td:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5em;
+    background: #fafafa;
+    width: 25%;
+    height: 100%;
+    padding-right: 10px;
+    white-space: nowrap;
+    border-right: 1px solid #eee;
+    font-weight: 600;
+  }
+  table.table.table-responsive td:nth-of-type(1):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(2):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(3):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(4):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(5):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(6):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(7):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(8):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(9):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(10):before {
+    content: attr(data-label);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  table.table.table-responsive {
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  table.table.table-responsive thead, table.table.table-responsive tbody, table.table.table-responsive th, table.table.table-responsive td, table.table.table-responsive tr {
+    display: block;
+  }
+  table.table.table-responsive thead {
+    display: none;
+  }
+  table.table.table-responsive tr {
+    border-bottom: 1px solid #ccc;
+    background: white;
+    margin-bottom: 0;
+  }
+  table.table.table-responsive td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 27% !important;
+  }
+  table.table.table-responsive td:last-of-type {
+    border-bottom: none;
+  }
+  table.table.table-responsive td:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5em;
+    background: #fafafa;
+    width: 25%;
+    height: 100%;
+    padding-right: 10px;
+    white-space: nowrap;
+    border-right: 1px solid #eee;
+    font-weight: 600;
+  }
+  table.table.table-responsive td:nth-of-type(1):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(2):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(3):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(4):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(5):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(6):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(7):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(8):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(9):before {
+    content: attr(data-label);
+  }
+  table.table.table-responsive td:nth-of-type(10):before {
+    content: attr(data-label);
+  }
+}
+
 ul.pagination {
   margin: 3em auto 1em;
   display: block;

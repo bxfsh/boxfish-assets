@@ -30,3 +30,36 @@ Flex table is an alternative to the `<table>` tag which uses flex to style the l
   </div>
 </div>
 ```
+
+___
+
+### Responsive Table
+Tables with the `table-responsive` class will break on small and extra-small devices.
+
+{% include components/responsive-table.html %}
+
+> NOTE the `data-label` attribute is required on the <td> elements.
+
+```html
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>One</th>
+      <th>Two</th>
+      <th>Three</th>
+      <th>Four</th>
+      <th>Five</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td data-label="One">One</td>
+      <td data-label="Two">Two</td>
+      <td data-label="Three">Three</td>
+      <td data-label="Four">Four</td>
+      <td data-label="Five">Five</td>
+    </tr>
+  </tbody>
+</table>
+```

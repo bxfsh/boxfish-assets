@@ -235,3 +235,55 @@
 .table-fixed {
 	table-layout: fixed;
 }
+
+table.table.table-responsive {
+	@include devices(true, true) {
+		display: block;
+		box-shadow: none;
+
+		thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		thead {
+			display: none;
+		}
+
+		tr {
+			border-bottom: 1px solid #ccc;
+			background: white;
+			margin-bottom: 0;
+		}
+
+		td {
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 27%!important;
+
+			&:last-of-type {
+				border-bottom: none;
+			}
+		}
+
+		td:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0.5em;
+			background: #fafafa;
+			width: 25%;
+			height: 100%;
+			padding-right: 10px;
+			white-space: nowrap;
+			border-right: 1px solid #eee;
+			font-weight: 600;
+		}
+
+		@for $i from 1 through 10 {
+			td:nth-of-type(#{$i}):before {
+				content: attr(data-label);
+			}
+		}
+	}
+}
