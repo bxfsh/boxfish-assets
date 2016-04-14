@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 
   grunt.config.set('wiredep', {
     task: {
-      src: ['./views/layout.ejs', './assets/sass/app.scss'],
+      src: ['./views/layout.ejs'],
       ignorePath: '../assets',
       options: {}
     }
@@ -66,10 +66,37 @@ To import the javascript and css files, add the following to your `layout.ejs` f
 <!-- endbower -->
 ```
 
-To import the sass files, add the following to your main sass stylesheet:
+To import the sass files, first add the include path to your sass grunt config:
+```javascript
+module.exports = function(grunt) {
+  grunt.config.set('sass', {
+    dev: {
+      options: {
+        style: 'compressed',
+        loadPaths: [
+          'assets/bower_components/boxfish-assets/dist/scss'
+        ]
+      },
+      files: [{
+        expand: true,
+        cwd: 'assets/sass/',
+        src: ['**/*.scss'],
+        dest: 'assets/stylesheets/',
+        ext: '.css'
+      }]
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-sass');
+};
+```
+
+Then simply `@import` the sass files you want:
+
 ```scss
-// bower:scss
-// endbower
+@import "colors";
+@import "variables";
+@import "mixins";
 ```
 
 ## Running
