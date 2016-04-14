@@ -1,7 +1,6 @@
 @import "exports/colors";
 @import "exports/mixins";
 @import "exports/variables";
-
 // Create Buttons
 @include create-button(error, $red);
 @include create-button(success, darken($green, 3%));
@@ -15,7 +14,7 @@
 @include create-ghost-button(warning, $warning);
 
 .btn-sm {
-  font-size: 0.8em
+  font-size: 0.8em;
 }
 
 .btn {
@@ -25,34 +24,37 @@
 .btn,
 .btn-sm {
   border: none;
-	text-decoration: none!important;
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
-	outline: none none;
-	box-shadow: none;
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-	text-shadow: none;
+  text-decoration: none!important;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  outline: none none;
+  box-shadow: none;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  text-shadow: none;
   font-weight: 400;
-	overflow: hidden;
+  overflow: hidden;
   background-image: none;
   transition: all 0.1s;
-	box-shadow: none!important;
+  box-shadow: none!important;
   border-radius: 3px;
 
   &:focus {
     outline: none;
   }
 
-  &.disabled, &:disabled {
+  &.disabled,
+  &:disabled {
     opacity: 0.6;
     pointer-events: none;
   }
 
-	> i {
-		margin-right: 1em;
-		color: white;
-	}
+  &:not(.btn-default) {
+    > i {
+      margin-right: 1em;
+      color: white;
+    }
+  }
 
   &.btn-block {
     width: 100%;
@@ -67,14 +69,14 @@
 
   &.btn-rounded {
     border-radius: 20px;
-		padding-left: 1.5em;
+    padding-left: 1.5em;
 
-		i {
+    i {
       margin: 0;
       padding: 0;
       background: transparent!important;
     }
-	}
+  }
 }
 
 .btn.btn-dark {
@@ -87,8 +89,8 @@
   }
 }
 
-.btn.btn-ghost,
-.btn-sm.btn-ghost {
+.btn-sm.btn-ghost,
+.btn.btn-ghost {
   background: transparent;
   color: $lighter-grey;
   border: 1px solid;
@@ -106,8 +108,8 @@
   }
 }
 
-.btn.btn-blank,
-.btn-sm.btn-blank {
+.btn-sm.btn-blank,
+.btn.btn-blank {
   background: white;
   border: 1px solid $border-grey;
   color: $light-grey;
@@ -123,12 +125,12 @@
   }
 }
 
-.btn.btn-default,
-.btn-sm.btn-default {
+.btn-sm.btn-default,
+.btn.btn-default {
   background: white;
   color: $dark-grey;
   border: 1px solid $border-grey;
-  box-shadow: inset 0px 1px 0px rgba(white, 0.7);
+  box-shadow: inset 0 1px 0 rgba(white, 0.7);
 
   &:hover {
     background: darken($button-grey, 2%);
